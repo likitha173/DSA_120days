@@ -1,3 +1,9 @@
+/* 
+Question 2 : Write a method named isEven that accepts an int argument. The method
+should return true if the argument is even, or false otherwise. Also write a program to test your
+method.
+ */ 
+
 import java.util.*;
 public class question2 {
     public static void main(String[] args){
