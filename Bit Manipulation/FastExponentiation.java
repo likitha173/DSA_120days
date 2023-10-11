@@ -4,6 +4,15 @@ public class FastExponentiation {
         int a = 3;
         int ans = 1;
 
+        if (n == 0) {
+            System.out.println(1);
+        }
+
+        if (n < 0) {
+            a = 1 / a;
+            n = -n;
+        }
+
         while(n > 0){
             if((n & 1) != 0){
                 ans = ans * a;
