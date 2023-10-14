@@ -2,9 +2,13 @@ public class Inheritance {
     public static void main(String args[]){
         Fish shark = new Fish();
         shark.eat();
+
+        Dog dobby = new Dog();
+        dobby.legs = 4;
+        System.out.println(dobby.legs);
     }
 }
-
+ 
 //base class
 class Animal {
     String color; 
@@ -16,6 +20,16 @@ class Animal {
         System.out.println("breathes");
     }
 }
+
+// Dervied Class
+class Mammal extends Animal {
+    int legs;
+}
+
+class Dog extends Mammal{
+    String breed;
+}
+
 
 // Dervied Class
 class Fish extends Animal {
