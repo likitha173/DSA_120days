@@ -3,7 +3,8 @@ public class PrintXpowN_Ologn {
         if(n == 0){
             return 1;
         }
-        int halfPowSq = optimizedPower(x, n/2) * optimizedPower(x, n/2);
+        int halfPower = optimizedPower(x, n/2);
+        int halfPowSq = halfPower * halfPower;
 
         if(n%2 != 0){
             halfPowSq = x * halfPowSq;
