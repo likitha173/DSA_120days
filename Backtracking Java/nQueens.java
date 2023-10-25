@@ -20,6 +20,7 @@ public class nQueens {
     public static void nQueen(char board[][], int row){
         if(row == board.length){
             printBoard(board);
+            count++;
             return;
         }
         for(int j=0; j<board.length; j++){
@@ -39,8 +40,9 @@ public class nQueens {
             System.out.println();
         }
     }
+    static int count = 0;
     public static void main(String args[]){
-        int n = 4;
+        int n = 5;
         char board[][] = new char[n][n];
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
@@ -48,6 +50,7 @@ public class nQueens {
             }
         }
         nQueen(board, 0);
+        System.out.println("Total ways to sovle N Queens: " + count);
         
     }
 }
