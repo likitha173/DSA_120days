@@ -30,6 +30,8 @@ public class LinkedList {
         head = newNode;
     }
 
+////////////////////////////////////////////////////////
+
     public void addLast(int data){
         Node newNode = new Node(data);
         size++;
@@ -40,6 +42,8 @@ public class LinkedList {
         tail.next = newNode;
         tail = newNode;
     }
+
+    //////////////////////////////////////////////////////// 
 
     public void add(int idx, int data){
         if(idx == 0){
@@ -60,6 +64,8 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    ////////////////////////////////////////////////////////
+
     public int removeFirst(){
         if(size == 0){
             System.out.println("Linked List is Empty");
@@ -76,6 +82,8 @@ public class LinkedList {
         size--;
         return val;
     }
+
+    ////////////////////////////////////////////////////////
 
     public int removeLast(){
         if(size == 0){
@@ -100,6 +108,8 @@ public class LinkedList {
         return val;
     }
 
+    ////////////////////////////////////////////////////////
+
     public int itrSearch(int key){ //O(n)
         int i = 0;
         Node temp = head;
@@ -114,6 +124,8 @@ public class LinkedList {
 
         return -1;
     }
+
+////////////////////////////////////////////////////////
 
     public int helper(Node head, int key){ //O(n)
         if(head == null){
@@ -134,6 +146,24 @@ public class LinkedList {
         return helper(head, key);
     }
 
+////////////////////////////////////////////////////////
+
+    public void reverse(){
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+////////////////////////////////////////////////////////
+
     public void print(){
         Node temp = head;
         while (temp != null) {
@@ -142,6 +172,9 @@ public class LinkedList {
         }
         System.out.println();
     }
+    
+////////////////////////////////////////////////////////
+    
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -167,6 +200,9 @@ public class LinkedList {
 
         System.out.println(ll.recSearch(3));
         System.out.println(ll.recSearch(19));
+
+        ll.reverse();
+        ll.print();
         
     }
 }
