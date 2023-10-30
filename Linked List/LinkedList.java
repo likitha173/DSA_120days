@@ -164,6 +164,33 @@ public class LinkedList {
 
 ////////////////////////////////////////////////////////
 
+    public void deleteNthfromEnd(int n){
+        // size 
+        int sz = 0;
+        Node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            sz++;
+        }
+
+        if(n == sz){
+            head = head.next;
+            return;
+        }
+
+        int i = 1;
+        int iTofind = sz-n;
+        Node prev = head;
+        while (i < iTofind) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
+
+
+    
     public void print(){
         Node temp = head;
         while (temp != null) {
@@ -200,6 +227,9 @@ public class LinkedList {
 
         System.out.println(ll.recSearch(3));
         System.out.println(ll.recSearch(19));
+
+        ll.deleteNthfromEnd(3);
+        ll.print();
 
         ll.reverse();
         ll.print();
