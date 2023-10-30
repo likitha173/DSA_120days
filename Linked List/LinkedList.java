@@ -99,6 +99,24 @@ public class LinkedList {
         size--;
         return val;
     }
+
+    public int itrSearch(int key){ //O(n)
+        int i = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+
+        return -1;
+    }
+
+
+
     public void print(){
         Node temp = head;
         while (temp != null) {
@@ -126,6 +144,9 @@ public class LinkedList {
         ll.print();
 
         System.out.println(size);
+
+        System.out.println(ll.itrSearch(3));
+        System.out.println(ll.itrSearch(19));
         
     }
 }
