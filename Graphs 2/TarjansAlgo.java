@@ -24,7 +24,7 @@ public class TarjansAlgo {
                 dfs(graph, neigh, curr, dt, low, vis, time);
                 low[curr] = Math.min(low[curr], low[neigh]);
                 if(dt[curr] < low[neigh]) {
-                    System.out.print("Bridge: " + curr + "--------" + neigh);
+                    System.out.println("Bridge: " + curr + "--------" + neigh);
                 }
             } else {
                 low[curr] = Math.min(low[curr], dt[neigh]);
